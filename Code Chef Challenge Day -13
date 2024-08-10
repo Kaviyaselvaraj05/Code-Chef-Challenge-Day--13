@@ -1,0 +1,423 @@
+01)Height of Rationals
+In a recent breakthrough in mathematics, the proof utilized a concept called Height.
+
+Consider a fraction 
+a
+b
+b
+a
+​
+ . Its Height is defined as the maximum of its numerator and denominator. So, for example, the Height of 
+3
+19
+19
+3
+​
+  would be 
+19
+19, and the Height of 
+27
+4
+4
+27
+​
+  would be 
+27
+27.
+
+Given 
+a
+a and 
+b
+b, find the Height of 
+a
+b
+b
+a
+​
+ .
+
+Input Format
+The only line of input contains two integers, 
+a
+a and 
+b
+b.
+
+Output Format
+Output a single integer, which is the Height of 
+a
+b
+b
+a
+​
+ .
+
+Constraints
+1
+≤
+a
+,
+b
+≤
+100
+1≤a,b≤100
+a
+a and 
+b
+b do not have any common factors.
+Sample 1:
+Input
+Output
+3 19
+19
+Explanation:
+The maximum of 
+{
+3
+,
+19
+}
+{3,19} is 
+19
+19. Hence the Height of 
+3
+19
+19
+3
+​
+  is 
+19
+19.
+
+Sample 2:
+Input
+Output
+27 4
+27
+Explanation:
+The maximum of 
+{
+27
+,
+4
+}
+{27,4} is 
+27
+27. Hence the Height of 
+27
+4
+4
+27
+​
+  is 
+27
+27.
+  ANSWER:
+up,down=map(int, input().split())
+print(max(up, down))
+
+02)Instagram
+Chef categorises an instagram account as spam, if, the following count of the account is more than 
+10
+10 times the count of followers.
+
+Given the following and follower count of an account as 
+X
+X and 
+Y
+Y respectively, find whether it is a spam account.
+
+Input Format
+The first line of input will contain a single integer 
+T
+T, denoting the number of test cases.
+Each test case consists of two space-separated integers 
+X
+X and 
+Y
+Y — the following and follower count of an account, respectively.
+Output Format
+For each test case, output on a new line, YES, if the account is spam and NO otherwise.
+
+You may print each character of the string in uppercase or lowercase. For example, the strings YES, yes, Yes and yES are identical.
+
+Constraints
+1
+≤
+T
+≤
+100
+1≤T≤100
+1
+≤
+X
+,
+Y
+≤
+100
+1≤X,Y≤100
+Sample 1:
+Input
+Output
+4
+1 10
+10 1
+11 1
+97 7
+NO
+NO
+YES
+YES
+Explanation:
+Test case 
+1
+1: The following count is 
+1
+1 while the follower count is 
+10
+10. Since the following count is not more than 
+10
+10 times the follower count, the account is not spam.
+
+Test case 
+2
+2: The following count is 
+10
+10 while the follower count is 
+1
+1. Since the following count is not more than 
+10
+10 times the follower count, the account is not spam.
+
+Test case 
+3
+3: The following count is 
+11
+11 while the follower count is 
+1
+1. Since the following count is more than 
+10
+10 times the follower count, the account is spam.
+
+Test case 
+4
+4: The following count is 
+97
+97 while the follower count is 
+7
+7. Since the following count is more than 
+10
+10 times the follower count, the account is spam.
+
+ANSWER:
+for t in range(int(input())):
+    x,y=map(int,input().split())
+    if x>y*10:
+        print("YES")
+    else:
+        print("NO")
+
+03)Volume Control
+Chef is watching TV. The current volume of the TV is 
+X
+X. Pressing the volume up button of the TV remote increases the volume by 
+1
+1 while pressing the volume down button decreases the volume by 
+1
+1. Chef wants to change the volume from 
+X
+X to 
+Y
+Y. Find the minimum number of button presses required to do so.
+
+Input Format
+The first line contains a single integer 
+T
+T - the number of test cases. Then the test cases follow.
+The first and only line of each test case contains two integers 
+X
+X and 
+Y
+Y - the initial volume and final volume of the TV.
+Output Format
+For each test case, output the minimum number of times Chef has to press a button to change the volume from 
+X
+X to 
+Y
+Y.
+
+Constraints
+1
+≤
+T
+≤
+100
+1≤T≤100
+1
+≤
+X
+,
+Y
+≤
+100
+1≤X,Y≤100
+Sample 1:
+Input
+Output
+2
+50 54
+12 10
+4
+2
+Explanation:
+Test Case 1: Chef can press the volume up button 
+4
+4 times to increase the volume from 
+50
+50 to 
+54
+54.
+
+Test Case 2: Chef can press the volume down button 
+2
+2 times to decrease the volume from 
+12
+12 to 
+10
+10.
+ANSWER:
+for _ in range(int(input())):
+    a,b=map(int,input().split())
+    print("NO" if (b*10)>=a else "YES")
+
+04)ATM
+Pooja would like to withdraw X $US from an ATM. The cash machine will only accept the transaction if X is a multiple of 5, and Pooja's account balance has enough cash to perform the withdrawal transaction (including bank charges). For each successful withdrawal the bank charges 0.50 $US.
+
+Calculate Pooja's account balance after an attempted transaction.
+
+Input Format
+Each input contains 2 integers 
+X
+X and 
+Y
+Y.
+X
+X is the amount of cash which Pooja wishes to withdraw.
+Y
+Y is Pooja's initial account balance.
+
+Output Format
+Output the account balance after the attempted transaction, given as a number with two digits of precision. If there is not enough money in the account to complete the transaction, output the current bank balance.
+
+Constraints
+0
+<
+X
+≤
+2000
+0<X≤2000 - the amount of cash which Pooja wishes to withdraw.
+0
+≤
+Y
+≤
+2000
+0≤Y≤2000 with two digits of precision - Pooja's initial account balance.
+Sample 1:
+Input
+Output
+30 120.00
+89.50
+Explanation:
+Example - Successful Transaction
+
+Sample 2:
+Input
+Output
+42 120.00
+120.00
+Explanation:
+Example - Incorrect Withdrawal Amount (not multiple of 5)
+
+Sample 3:
+Input
+Output
+300 120.00
+120.00
+Explanation:
+Example - Insufficient Funds
+ANSWER:
+n,atm=map(float,input().split())
+n=int(n)
+if (n+0.5<=atm and n%5==0):
+    print(float(atm-n-0.5))
+else:
+    print(float(atm))
+
+05)Is it hot or cold
+Chef considers the climate HOT if the temperature is above 
+20
+20, otherwise he considers it COLD. You are given the temperature 
+C
+C, find whether the climate is HOT or COLD.
+
+Input Format
+The first line of input will contain a single integer 
+T
+T, denoting the number of test cases.
+The first and only line of each test case contains a single integer, the temperature 
+C
+C.
+Output Format
+For each test case, print on a new line whether the climate is HOT or COLD.
+
+You may print each character of the string in either uppercase or lowercase (for example, the strings hOt, hot, Hot, and HOT will all be treated as identical).
+
+Constraints
+1
+≤
+T
+≤
+50
+1≤T≤50
+0
+≤
+C
+≤
+40
+0≤C≤40
+Sample 1:
+Input
+Output
+2
+21
+16
+HOT
+COLD
+Explanation:
+Test case 
+1
+1: The temperature is 
+21
+21, which is more than 
+20
+20. So, Chef considers the climate HOT.
+
+Test case 
+2
+2: The temperature is 
+16
+16, which is not more than 
+20
+20. So, Chef considers the climate COLD.
+
+ANSWER:
+n,atm=map(float,input().split())
+n=int(n)
+if (n+0.5<=atm and n%5==0):
+    print(float(atm-n-0.5))
+else:
+    print(float(atm))
+
+
+
